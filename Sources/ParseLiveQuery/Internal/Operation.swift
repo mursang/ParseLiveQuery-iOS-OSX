@@ -21,10 +21,10 @@ enum ClientOperation {
             return [ "op": "connect", "applicationId": applicationId, "sessionToken": sessionToken ]
 
         case .subscribe(let requestId, let query, let sessionToken):
-            var result: [String: Any] =  [ "op": "subscribe", "requestId": requestId.value, "query": Dictionary<String, AnyObject>(query: query) ]
-            if let sessionToken = sessionToken {
+            var result: [String: Any] =  [ "op": "subscribe", "requestId": requestId.value, "query": Dictionary<String, AnyObject>(query: query), "sessionToken":sessionToken]
+            /*if let sessionToken = sessionToken {
                 result["sessionToken"] = sessionToken
-            }
+            }*/
             return result
 
         case .unsubscribe(let requestId):
